@@ -25,6 +25,8 @@
             <section class="profile-section">
                 <h2>Edit Profile</h2>
                 <div class="form-group">
+                <br>
+                <h4>Contact</h4> 
                     <input type="hidden" name="profileid" value="<?= $row['tempcode'];?>" required>
                     <br><label>Email</label>
                     <input type="email" name="email" value="<?php echo $row['email'] ;?>"><br>
@@ -32,6 +34,12 @@
                     <input type="number" name="phoneNumber" value="<?php echo $row['phone'] ;?>"><br>
                     <br><label>Landline Number</label>
                     <input type="number" name="landlineNumber" value="<?php echo $row['landline'] ;?>"><br>
+                    <br>
+                <h4>Others</h4>
+                <br><label>Age</label>
+                <input type="number" name="age" value="<?php echo $row['age'] ;?>"><br>
+                <br><label>Relationship Status:</label>
+                <input type="text" name="RelationStatus" value="<?php echo $row['RelationStatus'] ;?>"><br>
                 </div>
                 <div class="account-info">
                 </div>
