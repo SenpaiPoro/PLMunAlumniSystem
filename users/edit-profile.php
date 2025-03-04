@@ -13,10 +13,11 @@
                                     echo 'src="Style/Photos/profile.jpg"';
                                 }
                                 ?> alt="Profile Picture" class="profile-pic" id="profileImage">
-                    <label for="fileInput" class="upload-btn" name="image">
+                    <label for="fileInput" class="upload-btn">
                         <img src="Style/Photos/camera-icon.jpg" alt="Style/Photos/camera-icon.jpg">
                     </label>
-                    <input type="file" name="image" id="fileInput"  style="display: none;">
+                    <input type="file" name="image" id="fileInput"  style="display: none;" 
+                    value="<?php echo $row['photos'];?>">
                 </div>
                 <h1><?php echo $row['FirstName'] ;?> <?php echo $row['LastName'] ;?></h1>
             </div>
