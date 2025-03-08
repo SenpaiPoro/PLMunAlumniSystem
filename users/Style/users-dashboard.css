@@ -43,11 +43,11 @@ body {
 }
 
 .toggle-btn {
-    position: fixed;
+    position: absolute;
     background: none;
     border: none;
     outline: none;
-    margin-left: 12.5%;
+    margin-left: 10%;
     margin-top: 10px;
     color: #fff;
     font-size: 1.2rem;

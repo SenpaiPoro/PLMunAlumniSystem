@@ -38,10 +38,9 @@
                     <label><b>Email:</b> <?php echo $row['email'] ;?></label><br>
                     <?php } 
                     else {
-                        //no display
-                    }
+                        //no display in email row
+                        }
                     ?>
-                                
                     <label><b>Email:</b> <?php echo $row['username'] ;?></label><br>
                     <label><b>Landline No:</b> <?php echo $row['landline'] ;?></label><br>
                 </div>
@@ -93,8 +92,6 @@
             }
         });
     </script>
-
-
             </div>
         </div>
 </div>
