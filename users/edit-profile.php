@@ -37,8 +37,6 @@
                     <input type="number" name="landlineNumber" value="<?php echo $row['landline'] ;?>"><br>
                     <br>
                 <h4>Others</h4>
-                <br><label>Age</label>
-                <input type="number" name="age" value="<?php echo $row['age'] ;?>"><br>
                 <br><label>Relationship Status:</label>
                 <!-- <input type="text" name="RelationStatus" value="<?php //echo $row['RelationStatus'] ;?>"><br> -->
                 <Select name="RelationStatus" value="<?php echo $row['RelationStatus'] ;?>">
