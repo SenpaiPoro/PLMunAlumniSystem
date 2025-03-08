@@ -1,9 +1,9 @@
-body{
+/* body{
     margin: 0;
     padding: 8;
     font-family: 'Times New Roman', Times, serif;
     height:  100vh;
-    background-image: url('../img/Polish_20240515_191334980.jpg');
+    background-image: url('../img/Login/Campus.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -80,4 +80,4 @@ input[type="submit"]{
     cursor: pointer;
     font-size: 15px;
     margin: 20px 0;
-}
+} */

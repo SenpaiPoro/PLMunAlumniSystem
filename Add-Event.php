@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Upload Event Image</label>
-                        <input type="file" name="image" class="form-control">
+                        <input type="text" name="image" class="form-control">
                     </div>
                     <div class="mb-3 text-end">
                         <button type="submit" name="saveEvent" class="btn btn-primary">Save</button>

@@ -1,31 +1,47 @@
 <?php
 require '../config/func.php';
-
-
 // //////////////////
-// Home Management Add Data
+// Home Management Add users
 ////////////////////
 if(isset($_POST['save']))
 {
-    $name = validate($_POST['name']);
-    $description = validate($_POST['description']);
+    $colleges = validate($_POST['colleges']);
+    $program = validate($_POST['program']);
+    $tempcode = validate($_POST['tempcode']);
+    $firstname = validate($_POST['firstname']);
+    $lastname = validate($_POST['lastname']);
+    $middlename = validate($_POST['middlename']);
+    $sex =  validate($_POST['sex']);
+    $graduated = validate($_POST['graduated']);
+    $bday = validate($_POST['bday']);
+    $programcode = programcode($program);
+    
+    $username = strtolower($lastname.$firstname."_".$programcode."@edu.plmun.ph");
 
-    if ($name != '' && $description != '')
+    if ($colleges != '' && $program != ''  && $tempcode != ''
+     && $firstname != '' && $lastname != '' && $middlename != '' && $sex != ''
+      && $graduated != '' && $bday != '')
     {
-        $query = "INSERT INTO home (name,description,image) 
-        VALUES ('$name','$description','$filename')";   
+        $users = "INSERT INTO users (colleges,program,tempcode,username,graduated) 
+        VALUES ('$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
         
+        $personal = "INSERT INTO personal (tempcode,FirstName,MiddleName,LastName,sex, bday)
+        VALUES ('$tempcode','$firstname','$middlename','$lastname','$sex' ,'$bday')";
+        $personalresult = mysqli_query($conn, $personal);
         
-        $result = mysqli_query($conn, $query);
-        
-        if($result)
+        $contacts = "INSERT INTO contacts (contactId,phone,email,landline) 
+        VALUES ('$tempcode',null ,null, null)";
+        $contactresult = mysqli_query($conn, $contacts);
+
+        $result = mysqli_query($conn, $users) ;
+        if($result && $personalresult && $contactresult)
         {
             redirect('Home_Settings.php', 'Event Successfully Added');
         }
         else
         {
             redirect('Home_Management.php', 'Something went wrong.');
-        }
+        } 
     }
     else
     {
@@ -39,12 +55,11 @@ if(isset($_POST['save']))
 
 if(isset($_POST['update']))
 {
-    $name = validate($_POST['name']);
-    $description = validate($_POST['description']);
-    $image = validate($_POST['image']);
+    $name = validate($_POST['colleges']);
+    $description = validate($_POST['program']);
+    $image = validate($_POST['tempcode']);
     $EventId = validate($_POST['Id']);
-
-    $user = getByid('home', $EventId);
+    $user = getByid('users', $EventId);
 
     if($user['status'] != 200)
     {
@@ -53,17 +68,17 @@ if(isset($_POST['update']))
     
     if ($name != '' && $description != '')
     {
-        $query = "UPDATE home SET
-        name = '$name',
-        description = '$description',
-        image = '$image'
+        $query = "UPDATE users SET
+        colleges = '$name',
+        program = '$description',
+        tempcode = '$image'
         WHERE id = '$EventId' "; 
         
         $result = mysqli_query($conn, $query);
         
         if($result)
         {
-            redirect('Home_Settings.php', 'Event Successfully Updated');
+            redirect('Home_Settings.php', 'Alumni Successfully Updated');
         }
         else
         {
@@ -77,6 +92,49 @@ if(isset($_POST['update']))
 }
 
 
+if(isset($_POST['updateprofile']))
+{
+    $profileId = validate($_POST['profileid']);
+    $email = validate($_POST['email']);
+    $phoneNumber = validate($_POST['phoneNumber']);
+    $landlineNumber = validate($_POST['landlineNumber']);
+    $age = validate($_POST['age']);
+    $RelationStatus = validate($_POST['RelationStatus']);
+
+   if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $file_name = $_FILES['image']['name'];
+        $file_temp = $_FILES['image']['tmp_name'];
+        $folder = '../../users/Style/profile/' . $file_name;
+
+        // Move the uploaded file to the desired directory
+        if (move_uploaded_file($file_temp, $folder)) {
+            $photos = "UPDATE personal SET
+            photos = '$file_name'
+            WHERE tempcode = '$profileId'"; 
+            $result = mysqli_query($conn, $photos);
+        } else {
+            exit;
+        }
+    }
+    $query = "UPDATE contacts 
+    JOIN personal ON contacts.contactId = personal.tempcode
+    SET
+    contacts.phone = '$phoneNumber',
+    contacts.email = '$email',
+    contacts.landline = '$landlineNumber',
+    personal.age = '$age',
+    personal.RelationStatus = '$RelationStatus'
+    WHERE contacts.contactId = '$profileId'"; 
+    $result = mysqli_query($conn, $query);
+    if($result)
+    {
+        redirect('../../users/profile.php', 'Profile Successfully Updated');
+    } else {
+        echo "Failed to upload file.";
+        exit;
+    }
+
+    }
 // ////////////////////////////////////////////////
 // Event Management Add Data
 ////////////////////////////////////////////////////
@@ -116,7 +174,7 @@ if(isset($_POST['updateEvent']))
     $EventId = validate($_POST['Id']);
     $name = validate($_POST['name']);
     $day = validate($_POST['date']);
-    $description = validate($_POST['description']);
+    $description = validate($_POST  ['description']);
     $image = validate($_POST['image']);
 
     $user = getByid('event', $EventId);

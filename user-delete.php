@@ -5,15 +5,15 @@ require '../config/func.php';
 $parameter_result = checkId('id');
 if(is_numeric($parameter_result))
 {
-     $eventId =  validate($parameter_result);
-     $event = getByid('home', $eventId);
+    $usersId =  validate($parameter_result);
+    $users = getByid('users', $usersId);
+    $personalId = $users['data']['tempcode'];
 
-     if($event['status'] == 200)
+     if($users['status'] == 200)
      {
-        
-        $eventDeleted = deleteQuery('home',$eventId);
+        $usersDeleted = deleteQuery('users',$usersId, $personalId);
 
-        if($eventDeleted)
+        if($usersDeleted)
         {
             redirect('Home_Settings.php', 'Successfully Deleted');
         }

@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4>
                   Event Lists
-                    <a href="Add-Event.php" class="btn btn-primary float-end"> Add Event </a>
+                    <a href="Add-Eve nt.php" class="btn btn-primary float-end"> Add Event </a>
                 </h4>
             </div>
         </div>

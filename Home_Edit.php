@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>
-                   Edit Home Management
+                   Edit Alumni Data
                     <a href="Home_Settings.php" class="btn btn-danger float-end"> Back </a> 
                 </h4>
             </div>
@@ -19,25 +19,31 @@
                         return false;
                      }
 
-                     $user = getByid('home', checkId('id'));
+                     $user = getByid('users', checkId('id'));
                      if($user['status'] == 200)
-                     {
+                        {
                 ?>
-
-                    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>
-                    
+    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>                
+    <div class="mb-3">
+        <label> Colleges</label>
+        <select id="Department-type" name="colleges" class="form-control" rows="2" required>
+            <option value="<?= $user['data']['colleges'];?>"><?= $user['data']['colleges'];?></option>
+            <option value="CITCS">CITCS</option>
+            <option value="CCJ">CCJ</option>
+            <option value="CAS">CAS</option>
+            <option value="CBA">CBA</option>
+            <option value="CTE">CTE</option>
+        </select>
+    </div>
                     <div class="mb-3">
-                        <label> Event Name</label>
-                        <input type="text" name="name" value="<?= $user['data']['name'] ;?>" required class="form-control">
+                        <label> Program</label>
+                <select id="program-option" name="program" class="form-control">
+                     <option value="<?= $user['data']['program'];?>"><?= $user['data']['program'];?></option>
+                </select>
                     </div>
-                    
                     <div class="mb-3">
-                        <label> Description</label>
-                        <input name="description" value="<?= $user['data']['description'] ;?>"  required class="form-control" rows="3"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label>Upload Event Image</label>
-                        <input type="file" name="image" value="<?= $user['data']['image'] ;?>"  class="form-control">
+                        <label>Tempcode</label>
+                        <input type="text" name="tempcode" value="<?= $user['data']['tempcode'] ;?>"  class="form-control">
                     </div>
                     <div class="mb-3 text-end">
                         <button type="submit" name="update" class="btn btn-primary">Update</button>
@@ -57,5 +63,5 @@
         </div>
     </div>
 </div>
-
+<script src="assets/js/script.js"></script>
 <?php include ('include/footer.php'); ?>

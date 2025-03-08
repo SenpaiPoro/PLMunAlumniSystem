@@ -19,7 +19,7 @@
                         return false;
                      }
 
-                     $user = getByid('event', checkId('id'));
+                     $user = getByid('users', checkId('id'));
                      if($user['status'] == 200)
                      {
                 ?>
