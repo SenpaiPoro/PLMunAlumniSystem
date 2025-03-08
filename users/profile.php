@@ -26,7 +26,7 @@
                     <label><b>Lives in:</b> <p> </p></label><br>
                     <label><b>Working Status:</b> <p> </p></label><br>
                     <label><b>Education:</b> <?php echo $row['program'] ;?></label><br>
-                    <label><b>Year Graduated: </b></label><br>
+                    <label><b>Year Graduated: </b>  <?php echo $row['graduated'] ;?></label><br>
                 </div>
                 <div class="account-info">
                 <h2>Contact</h2>
