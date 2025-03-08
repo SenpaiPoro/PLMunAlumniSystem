@@ -11,7 +11,7 @@ $tempcode = $_SESSION['tempcode'];
 $sql = "SELECT * 
         FROM users
         INNER JOIN personal ON users.tempcode = personal.tempcode
-        INNER JOIN contacts ON users.tempcode = contacts.contactId
+        INNER JOIN contacts ON users.tempcode = contacts.contactId 
         WHERE users.tempcode = '$tempcode' ";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();

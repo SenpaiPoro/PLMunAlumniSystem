@@ -46,6 +46,13 @@
                     <option value="Separated">Separated</option>
                     <option value="Divorced">Divorced</option>
                 </Select>
+                <label>Working Status:</label>
+                <Select name="workStatus" value="<?php echo $row['WorkingStatus'] ;?>">
+                    <option value="Employed">Employed</option>
+                    <option value="Unemployed">Unemployed</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired">Retired</option>
+                </Select>
                 </div>
                 <div class="account-info">
                 </div>
