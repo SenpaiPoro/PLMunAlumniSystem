@@ -24,7 +24,7 @@ if(isset($_POST['save']))
     {
         $users = "INSERT INTO users (colleges,program,tempcode,username,graduated) 
         VALUES ('$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
-        
+
         $personal = "INSERT INTO personal (tempcode,FirstName,MiddleName,LastName,sex, bday)
         VALUES ('$tempcode','$firstname','$middlename','$lastname','$sex' ,'$bday')";
         $personalresult = mysqli_query($conn, $personal);
@@ -36,7 +36,7 @@ if(isset($_POST['save']))
         $result = mysqli_query($conn, $users) ;
         if($result && $personalresult && $contactresult)
         {
-            redirect('Home_Settings.php', 'Event Successfully Added');
+            redirect('Home_Settings.php', 'Users Successfully Added');
         }
         else
         {
