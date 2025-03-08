@@ -49,9 +49,9 @@
                 <h2>Personal Information</h2>
                 <br>
                 <div class="form-group">
-                    <label><b>Age:</b> <p> </p></label><br>
+                <label><b>Age:</b> <?php echo $row['age'] ;?></label><br>
                     <label><b>Sex:</b> <?php echo $row['sex'] ;?></label><br>
-                    <label><b>Relationship:</b> <p> </p></label><br>
+                    <label><b>Relationship:</b><?php echo $row['RelationStatus'] ;?></label><br>
                 </div>
                 </div>
                 <br>

@@ -40,7 +40,14 @@
                 <br><label>Age</label>
                 <input type="number" name="age" value="<?php echo $row['age'] ;?>"><br>
                 <br><label>Relationship Status:</label>
-                <input type="text" name="RelationStatus" value="<?php echo $row['RelationStatus'] ;?>"><br>
+                <!-- <input type="text" name="RelationStatus" value="<?php //echo $row['RelationStatus'] ;?>"><br> -->
+                <Select name="RelationStatus" value="<?php echo $row['RelationStatus'] ;?>">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced">Divorced</option>
+                </Select>
                 </div>
                 <div class="account-info">
                 </div>
