@@ -40,6 +40,7 @@
                 <br><label>Relationship Status:</label>
                 <!-- <input type="text" name="RelationStatus" value="<?php //echo $row['RelationStatus'] ;?>"><br> -->
                 <Select name="RelationStatus" value="<?php echo $row['RelationStatus'] ;?>">
+                <option value=<?php echo $row['RelationStatus'] ;?>> <?php echo $row['RelationStatus'] ;?></option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                     <option value="Widowed">Widowed</option>
@@ -47,7 +48,8 @@
                     <option value="Divorced">Divorced</option>
                 </Select>
                 <label>Working Status:</label>
-                <Select name="workStatus" value="<?php echo $row['WorkingStatus'] ;?>">
+                <Select name="workStatus" value="<?php echo $row['WorkStatus'] ;?>">
+                    <option value=<?php echo $row['WorkStatus'] ;?>><?php echo $row['WorkStatus'] ;?></option>
                     <option value="Employed">Employed</option>
                     <option value="Unemployed">Unemployed</option>
                     <option value="Student">Student</option>
