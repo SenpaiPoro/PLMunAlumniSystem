@@ -15,17 +15,16 @@ if(isset($_POST['save']))
     $graduated = validate($_POST['graduated']);
     $bday = validate($_POST['bday']);
     $programcode = programcode($program);
-
-    $studentid = Studentid($programcode);
-
+    $stdcode = Studentid($programcode);
     $username = strtolower($lastname.$firstname."_".$programcode."@edu.plmun.ph");
+    $tempcode = ($stdcode.$tempcode);
 
     if ($colleges != '' && $program != ''  && $tempcode != ''
      && $firstname != '' && $lastname != '' && $middlename != '' && $sex != ''
       && $graduated != '' && $bday != '')
     {
-        $users = "INSERT INTO users (id, colleges,program,tempcode,username,graduated) 
-        VALUES ('$studentid','$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
+        $users = "INSERT INTO users (colleges,program,tempcode,username,graduated) 
+        VALUES ('$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
 
         $personal = "INSERT INTO personal (tempcode,FirstName,MiddleName,LastName,sex, bday)
         VALUES ('$tempcode','$firstname','$middlename','$lastname','$sex' ,'$bday')";
