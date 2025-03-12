@@ -98,8 +98,8 @@ if(isset($_POST['updateprofile']))
     $email = validate($_POST['email']);
     $phoneNumber = validate($_POST['phoneNumber']);
     $landlineNumber = validate($_POST['landlineNumber']);
-    $age = validate($_POST['age']);
     $RelationStatus = validate($_POST['RelationStatus']);
+    $workStatus = validate($_POST['workStatus']);
 
    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $file_name = $_FILES['image']['name'];
@@ -116,14 +116,37 @@ if(isset($_POST['updateprofile']))
             exit;
         }
     }
+
+    $add = "SELECT WorkStatus FROM personal WHERE tempcode = '$profileId'";
+    $result = mysqli_query($conn, $add);
+    $statuswork = mysqli_fetch_assoc($result);
+
+    if($statuswork['WorkStatus'] != $workStatus)
+    {
+        $now = new DateTime();
+        $currentYear = $now->format("y");
+        $currentMonth = $now->format('m');
+        $currentDay = $now->format('d');
+        $currentDate = $currentYear."-".$currentMonth."-".$currentDay;//y-m-d
+
+        $query = "INSERT INTO workrecord (tempcode,workstatus, date) 
+        VALUES ('$profileId','$workStatus', '$currentDate')";   
+        $result = mysqli_query($conn, $query);
+    }
+    else
+    {
+
+    }
+
+
     $query = "UPDATE contacts 
     JOIN personal ON contacts.contactId = personal.tempcode
     SET
     contacts.phone = '$phoneNumber',
     contacts.email = '$email',
     contacts.landline = '$landlineNumber',
-    personal.age = '$age',
-    personal.RelationStatus = '$RelationStatus'
+    personal.RelationStatus = '$RelationStatus',
+    personal.WorkStatus = '$workStatus'
     WHERE contacts.contactId = '$profileId'"; 
     $result = mysqli_query($conn, $query);
     if($result)
