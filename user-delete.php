@@ -15,7 +15,17 @@ if(is_numeric($parameter_result))
 
         if($usersDeleted)
         {
-            redirect('Home_Settings.php', 'Successfully Deleted');
+            
+            $query = 
+            "DELETE FROM workrecord WHERE tempcode = $personalId";
+             $result = mysqli_query($conn, $query);
+            if($result){
+                redirect('Home_Settings.php', 'Successfully Deleted');
+
+            }
+
+            redirect('Home_Settings.php', 'Successfully Deleted, No WorkRecord Found!');
+
         }
         else
         {
