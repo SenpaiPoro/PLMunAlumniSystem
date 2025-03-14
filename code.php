@@ -100,6 +100,7 @@ if(isset($_POST['updateprofile']))
     $phoneNumber = validate($_POST['phoneNumber']);
     $landlineNumber = validate($_POST['landlineNumber']);
     $RelationStatus = validate($_POST['RelationStatus']);
+    $address = validate();
     $workStatus = validate($_POST['workStatus']);
 
    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {

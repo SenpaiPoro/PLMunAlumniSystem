@@ -6,7 +6,7 @@
 
                     $code = $results->fetch_assoc();
                         $tempcodeValue = $code['tempcode']; // Extract the tempcode value from the array
-
+    
                         $sql = "SELECT * 
                                 FROM users
                                 INNER JOIN personal ON users.tempcode = personal.tempcode

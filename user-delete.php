@@ -21,25 +21,19 @@ if(is_numeric($parameter_result))
              $result = mysqli_query($conn, $query);
             if($result){
                 redirect('Home_Settings.php', 'Successfully Deleted');
-
-            }
-
-            redirect('Home_Settings.php', 'Successfully Deleted, No WorkRecord Found!');
-
-        }
+                }
+                else{
+                    redirect('Home_Settings.php', 'Something Went Wrong!');
+                }
+         }
         else
         {
-            redirect('Home_Settings.php', 'Something went Wrong');
-        }
-     }
-     else
-     {
         redirect('Home_Settings.php', $user['message']);
-     }
-}
-else
-{
+        }
+    }
+    else
+    {
     redirect('Home_Settings.php', $parameter_result);
+    }
 }
-
 ?>
