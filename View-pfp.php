@@ -37,8 +37,8 @@
                     </label>
                     <input value="submit" type="file" id="uploadProfilePic" accept="image/*" style="display: none;">
                 </div>
-                <h1><?php echo $row['FirstName'] ;?> <?php echo $row['LastName'] ;?></h1>
             </div>
+            <h1 class="text-center" style="margin-left: -100px; "><?php echo $row['FirstName'] ;?> <?php echo $row['LastName'] ;?></h1>
         </aside>
         <main class="content">
             <section class="profile-section">
@@ -69,7 +69,7 @@
                 <h2>Personal Information</h2>
                 <br>
                 <div class="form-group">
-                    <label><b>Age:</b> <?php echo $row['age'] ;?></label><br>
+                    <label><b>Age:</b> <?php $age = age($tempcodeValue); echo $age ;?></label><br>
                     <label><b>Sex:</b> <?php echo $row['sex'] ;?></label><br>
                     <label><b>Relationship:</b><?php echo $row['RelationStatus'] ;?></label><br>
                 </div>

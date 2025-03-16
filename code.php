@@ -1,54 +1,54 @@
 <?php
-require 'func.php';
+require '../config/func.php';
 // //////////////////
 // Home Management Add users
 ////////////////////
-// if(isset($_POST['save']))
-// {
-//     $colleges = validate($_POST['colleges']);
-//     $program = validate($_POST['program']);
-//     $tempcode = validate($_POST['tempcode']);
-//     $firstname = validate($_POST['firstname']);
-//     $lastname = validate($_POST['lastname']);
-//     $middlename = validate($_POST['middlename']);
-//     $sex =  validate($_POST['sex']);
-//     $graduated = validate($_POST['graduated']);
-//     $bday = validate($_POST['bday']);
-//     $programcode = programcode($program);
-//     $stdcode = Studentid($programcode);
-//     $username = strtolower($lastname.$firstname."_".$programcode."@edu.plmun.ph");
-//     $tempcode = ($stdcode.$tempcode);
+if(isset($_POST['save']))
+{
+    $colleges = validate($_POST['colleges']);
+    $program = validate($_POST['program']);
+    $tempcode = validate($_POST['tempcode']);
+    $firstname = validate($_POST['firstname']);
+    $lastname = validate($_POST['lastname']);
+    $middlename = validate($_POST['middlename']);
+    $sex =  validate($_POST['sex']);
+    $graduated = validate($_POST['graduated']);
+    $bday = validate($_POST['bday']);
+    $programcode = programcode($program);
+    $stdcode = Studentid($programcode);
+    $username = strtolower($lastname.$firstname."_".$programcode."@edu.plmun.ph");
+    $tempcode = ($stdcode.$tempcode);
 
-//     if ($colleges != '' && $program != ''  && $tempcode != ''
-//      && $firstname != '' && $lastname != '' && $middlename != '' && $sex != ''
-//       && $graduated != '' && $bday != '')
-//     {
-//         $users = "INSERT INTO users (colleges,program,tempcode,username,graduated) 
-//         VALUES ('$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
+    if ($colleges != '' && $program != ''  && $tempcode != ''
+     && $firstname != '' && $lastname != '' && $middlename != '' && $sex != ''
+      && $graduated != '' && $bday != '')
+    {
+        $users = "INSERT INTO users (colleges,program,tempcode,username,graduated) 
+        VALUES ('$colleges','$program','$tempcode' ,'$username' ,'$graduated')";   
 
-//         $personal = "INSERT INTO personal (tempcode,FirstName,MiddleName,LastName,sex, bday)
-//         VALUES ('$tempcode','$firstname','$middlename','$lastname','$sex' ,'$bday')";
-//         $personalresult = mysqli_query($conn, $personal);
+        $personal = "INSERT INTO personal (tempcode,FirstName,MiddleName,LastName,sex, bday)
+        VALUES ('$tempcode','$firstname','$middlename','$lastname','$sex' ,'$bday')";
+        $personalresult = mysqli_query($conn, $personal);
         
-//         $contacts = "INSERT INTO contacts (contactId,phone,email,landline) 
-//         VALUES ('$tempcode',null ,null, null)";
-//         $contactresult = mysqli_query($conn, $contacts);
+        $contacts = "INSERT INTO contacts (contactId,phone,email,landline) 
+        VALUES ('$tempcode',null ,null, null)";
+        $contactresult = mysqli_query($conn, $contacts);
 
-//         $result = mysqli_query($conn, $users) ;
-//         if($result && $personalresult && $contactresult)
-//         {
-//             redirect('Home_Settings.php', 'Users Successfully Added');
-//         }
-//         else
-//         {
-//             redirect('Home_Management.php', 'Something went wrong.');
-//         } 
-//     }
-//     else
-//     {
-//         redirect('Home_Management.php','Please Fill Up all the input Fields');
-//     }   
-// }
+        $result = mysqli_query($conn, $users) ;
+        if($result && $personalresult && $contactresult)
+        {
+            redirect('Home_Settings.php', 'Users Successfully Added');
+        }
+        else
+        {
+            redirect('Home_Management.php', 'Something went wrong.');
+        } 
+    }
+    else
+    {
+        redirect('Home_Management.php','Please Fill Up all the input Fields');
+    }   
+}
 
 // //////////////////
 // Home Management Upadate Data

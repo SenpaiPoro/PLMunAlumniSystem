@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">             
                 <?= alertMessage(); ?>
-                <form action="code.php" method="POST" enctype="multipart/form-data">
+                <form action="../config/code.php" method="POST" enctype="multipart/form-data">
             <div class="mb-5">
         <label>Department</label>
         <select id="Department-type" name="colleges" class="form-control" rows="2">
