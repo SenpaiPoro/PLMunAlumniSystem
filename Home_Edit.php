@@ -42,8 +42,11 @@
                 </select>
                     </div>
                     <div class="mb-3">
+                        
+                    <label>Year Graduated: </label>
+                        <input type="number" name="graduatedyear" value="<?= $user['data']['graduated'] ;?>"  class="form-control">
                         <label>Tempcode</label>
-                        <input type="text" name="tempcode" value="<?= $user['data']['tempcode'] ;?>"  class="form-control">
+                        <input type="number" name="tempcode" value="<?= $user['data']['tempcode'] ;?>"  class="form-control">
                     </div>
                     <div class="mb-3 text-end">
                         <button type="submit" name="update" class="btn btn-primary">Update</button>
