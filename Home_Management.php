@@ -13,6 +13,11 @@
                 <?= alertMessage(); ?>
                 <form action="../config/code.php" method="POST" enctype="multipart/form-data">
             <div class="mb-5">
+                <label>Level</label>
+        <select name="level" class="form-control" rows="2">
+            <option value="student">Student</option>
+            <option value="dean">Dean</option>
+        </select>
         <label>Department</label>
         <select id="Department-type" name="colleges" class="form-control" rows="2">
             <option value="">Select</option>
