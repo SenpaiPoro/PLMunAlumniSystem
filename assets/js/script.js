@@ -2,9 +2,6 @@ document.getElementById('Department-type').addEventListener('change', function (
     const Department = this.value;
     const Program = document.getElementById('program-option');
 
-    // Clear previous options
-    Program.innerHTML = '<option value="">Select</option>';
-
     // Define program options based on the selected department
     if (Department === 'CITCS') {
         const citcsOptions = ['Information Technology', 'Computer Science', 'ACT'];

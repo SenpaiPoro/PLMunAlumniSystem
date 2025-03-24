@@ -10,7 +10,7 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form action="code.php" method="POST">
+                <form action="../config/code.php" method="POST">
 
                 <?php
                     $paramResult = checkId('id');
@@ -23,7 +23,9 @@
                      if($user['status'] == 200)
                         {
                 ?>
-    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>                
+    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>        
+    <input type="hidden" name="page" value="Home_Settings.php" required>                
+        
     <div class="mb-3">
         <label> Colleges</label>
         <select id="Department-type" name="colleges" class="form-control" rows="2" required>
