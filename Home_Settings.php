@@ -35,9 +35,9 @@
                                 <td> <?= $usersList['username']; ?></td>
                                 <td> <?= $usersList['tempcode']; ?></td>
                                 <td> 
-                                <a href="Home_Edit.php?id=<?= $usersList['id'];?>   "class="btn btn-success btn-sm">Edit</a>
-                                <a href="user-delete.php?id=<?= $usersList['id'];?> "class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this event? ');">Delete</a>
-                                <a href="View-pfp.php?id=<?= $usersList['id'];?>   "class="btn btn-info btn-sm">View</a>
+                                <a href="Home_Edit.php?id=<?= $usersList['id'];?>&level=superadmin" class="btn btn-success btn-sm">Edit</a>
+                                <a href="user-delete.php?id=<?= $usersList['id'];?>&level=superadmin" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this User?');">Delete</a>
+                                <a href="View-pfp.php?id=<?= $usersList['id'];?>" class="btn btn-info btn-sm">View</a>
                             </td>
                     </tr>
                             <?php

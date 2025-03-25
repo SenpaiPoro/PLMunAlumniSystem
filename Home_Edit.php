@@ -23,8 +23,9 @@
                      if($user['status'] == 200)
                         {
                 ?>
-    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>        
-    <input type="hidden" name="page" value="Home_Settings.php" required>                
+    <input type="hidden" name="Id" value="<?= $user['data']['id'] ;?>" required>       
+     
+    <input type="hidden" name="page" value="Home_Settings" required>                
         
     <div class="mb-3">
         <label> Colleges</label>

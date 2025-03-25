@@ -39,6 +39,14 @@
                         <input type="number" id="graduated" name="graduated" required class="form-control">
                         <label>Code</label>
                         <input type="number" name="tempcode" placeholder="Enter Code" class="form-control">
+
+                        <!------------------------------------------------------------------------------------>
+                        <!------this is only to identy if the form is sumbited by the super admin------------->
+                        <input type="hidden" name="superadmin" value="1">
+                        <!------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------>
+
+
                     </div>
                     <!--------------------------------->
                     <!-- Personal Information fields -->
