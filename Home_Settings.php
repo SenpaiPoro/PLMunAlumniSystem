@@ -14,7 +14,7 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Colleges</th>
+                        <th>Role</th>
                         <th>Program</th>
                         <th>Username</th>
                         <th>Code</th>
@@ -30,7 +30,7 @@
                         {
                             ?>
                               <tr>
-                                <td> <?= $usersList['colleges']; ?></td>
+                                <td> <?= $usersList['level']; ?></td>
                                 <td> <?= $usersList['program']; ?></td>
                                 <td> <?= $usersList['username']; ?></td>
                                 <td> <?= $usersList['tempcode']; ?></td>
