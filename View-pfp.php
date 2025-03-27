@@ -45,10 +45,10 @@
                 <h2>Details</h2>
                 <br>
                 <div class="form-group">
-                    <label><b>Lives in:</b> <p> </p></label><br>
-                    <label><b>Working Status:</b> <p> </p></label><br>
+                    <label><b>Lives in:</b> <p> <?php echo $row['address'] ;?> </p></label><br>
+                    <label><b>Working Status:</b> <p> <?php echo $row['WorkStatus'] ;?> </p></label><br>
                     <label><b>Education:</b> <?php echo $row['program'] ;?></label><br>
-                    <label><b>Year Graduated:</b> </label><br>
+                    <label><b>Year Graduated:</b> <?php echo $row['graduated'] ;?></label><br>
                 </div>
                 <div class="account-info">
                 <h2>Contact</h2>
