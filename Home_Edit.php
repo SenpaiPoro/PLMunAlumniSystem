@@ -45,6 +45,21 @@
                 </select>
                     </div>
                     <div class="mb-3">
+
+                    <div class="input-group">
+                    <span class="input-group-text"><b>FULL NAME: </b></h></span>
+                    <input type="text" aria-label="First name" name="firstname" class="form-control" placeholder="First Name" value="<?= $user['data']['FirstName'] ;?>">
+                    <input type="text" aria-label="last name" name="lastname" class="form-control" placeholder="Last Name" value="<?= $user['data']['LastName'] ;?>">
+                    <input type="text" aria-label="middle name"name="middlename"  class="form-control" placeholder="Middle Name" value="<?= $user['data']['MiddleName'] ;?>">
+                    </div>
+                    <br>
+                    <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01" ><b>Sex:</b></label>
+                    <select class="form-select " id="inputGroupSelect01" name="sex" value="<?= $user['data']['MiddleName'] ;?>">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    </select>
+                    </div>
                         
                     <label>Year Graduated: </label>
                         <input type="number" name="graduatedyear" value="<?= $user['data']['graduated'] ;?>"  class="form-control">
