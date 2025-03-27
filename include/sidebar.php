@@ -46,14 +46,6 @@
             <span class="nav-link-text ms-1">Event Management</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link  " href="Settings.php">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-globe text-dark text-lg"></i>
-            </div>
-            <span class="nav-link-text ms-1">Settings</span>
-          </a>
-        </li>
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
