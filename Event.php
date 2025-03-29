@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4>
                   Event Lists
-                    <a href="Add-Eve nt.php" class="btn btn-primary float-end"> Add Event </a>
+                    <a href="Add-Event.php" class="btn btn-primary float-end"> Add Event </a>
                 </h4>
             </div>
         </div>
@@ -20,7 +20,6 @@
                         <th>Event Name</th>
                         <th>Date</th>
                         <th>Description</th>
-                        <th>Event Image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -29,7 +28,7 @@
 
                  <?php
                     
-                    $events = GetData('event');
+                    $events = GetData('posts');
                     if(mysqli_num_rows($events) > 0 )
                     {
                         foreach($events as $eventList)
@@ -37,12 +36,11 @@
                             ?>
                               <tr>
                                 <td> <?= $eventList['name']; ?></td>
-                                <td> <?= $eventList['date']; ?></td>
+                                <td> <?= $eventList['time']; ?></td>
                                 <td> <?= $eventList['description']; ?></td>
-                                <td> <?= $eventList['image']; ?></td>
                                 <td> 
                                 <a href="Event-Edit.php?id=<?= $eventList['id']; ?> "class="btn btn-success btn-sm">Edit</a>
-                                <a href="Event-Delete.php?id=<?= $eventList['id'];?> "class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this event? ');">Delete</a>
+                                <a href="event-delete.php?id=<?= $eventList['id'];?>&level=superadmin" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this event? ');">Delete</a>
                                 </td>
                     </tr>
                             <?php

@@ -10,7 +10,7 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form action="../config/code.php" method="POST">
+            <form action="../config/code.php" method="POST" enctype="multipart/form-data">
 
                 <?php
                     $paramResult = checkId('id');

@@ -17,7 +17,6 @@ if(is_numeric($parameter_result))
 
         if($usersDeleted)
         {
-         
             $query = 
             "DELETE FROM workrecord WHERE tempcode = $personalId";
              $result = mysqli_query($conn, $query);
