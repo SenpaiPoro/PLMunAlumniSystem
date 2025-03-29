@@ -29,11 +29,12 @@
                         foreach($users as $usersList)
                         {
                             ?>
-                              <tr>
-                                <td> <?= $usersList['level']; ?></td>
-                                <td> <?= $usersList['program']; ?></td>
-                                <td> <?= $usersList['username']; ?></td>
-                                <td> <?= $usersList['tempcode']; ?></td>
+                              <tr> 
+                                <!--  htmlspecialchars  Prevents XSS Cross-Site Scripting  -->
+                                    <td> <?= htmlspecialchars($usersList['level']); ?></td>
+                                    <td> <?= htmlspecialchars($usersList['colleges']); ?></td>
+                                    <td> <?= htmlspecialchars($usersList['username']); ?></td>
+                                    <td> <?= htmlspecialchars($usersList['tempcode']); ?></td>
                                 <td> 
                                 <a href="Home_Edit.php?id=<?= $usersList['id'];?>&level=superadmin" class="btn btn-success btn-sm">Edit</a>
                                 <a href="user-delete.php?id=<?= $usersList['id'];?>&level=superadmin" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this User?');">Delete</a>
