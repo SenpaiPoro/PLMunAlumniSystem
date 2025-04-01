@@ -20,7 +20,6 @@
         </select>
         <label>Department</label>
         <select id="Department-type" name="colleges" class="form-control" rows="2">
-            <option value="">Select</option>
             <option value="CITCS">CITCS</option>
             <option value="CCJ">CCJ</option>
             <option value="CAS">CAS</option>
@@ -31,7 +30,6 @@
             <div class="mb-5">
                 <label> Program </label>
         <select id="program-option" name="program" class="form-control">
-            <option value="">Select</option>
         </select>
             </div>
             <div class="mb-3">
