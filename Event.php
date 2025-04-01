@@ -39,7 +39,6 @@
                                 <td> <?= $eventList['time']; ?></td>
                                 <td> <?= $eventList['description']; ?></td>
                                 <td> 
-                                <a href="Event-Edit.php?id=<?= $eventList['id']; ?> "class="btn btn-success btn-sm">Edit</a>
                                 <a href="event-delete.php?id=<?= $eventList['id'];?>&level=superadmin" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure that you want to delete this event? ');">Delete</a>
                                 </td>
                     </tr>

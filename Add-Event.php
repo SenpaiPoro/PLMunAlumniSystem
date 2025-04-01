@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Event Image</label>
-                        <input class="form-control" type="file" name="image" id="fileInput">
+                        <input class="form-control" type="file" name="image" id="fileInput" require>
                     </div>
                     <div class="mb-3 text-end">
                         <button type="submit" name="AddEvent" class="btn btn-primary">Add Event</button>

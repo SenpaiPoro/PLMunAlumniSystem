@@ -19,7 +19,7 @@
                         return false;
                      }
 
-                     $user = getByid('users', checkId('id'));
+                     $user = getByid('posts', checkId('id'));
                      if($user['status'] == 200)
                      {
                 ?>
@@ -29,12 +29,7 @@
                         <label> Event Name</label>
                         <input type="text" name="name" value="<?= $user['data']['name'] ;?>" required class="form-control">
                     </div>
-
-                    <div class="mb-3">
-                        <label> Date</label>
-                        <input name="date" value="<?= $user['data']['date'] ;?>"  required class="form-control"></input>
-                    </div>
-
+    
                     <div class="mb-3">
                         <label> Description</label>
                         <input name="description" value="<?= $user['data']['description'] ;?>"  required class="form-control" rows="3"></input>
