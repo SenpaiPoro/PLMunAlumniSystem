@@ -10,21 +10,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Define programs based on the selected department
         if (department === 'CITCS') {
-            options = ['Information Technology', 'Computer Science', 'ACT'];
+            options = ['Select', 'Information Technology', 'Computer Science', 'ACT'];
         } else if (department === 'CCJ') {
-            options = ['Criminology'];
+            options = ['Select', 'Criminology'];
         } else if (department === 'CAS') {
-            options = ['Communication', 'Political Science', 'Psychology'];
+            options = ['Select', 'Communication', 'Political Science', 'Psychology'];
         } else if (department === 'CBA') {
-            options = ['Business Administration', 'Accountancy'];
+            options = ['Select', 'Business Administration', 'Accountancy'];
         } else if (department === 'CTE') {
-            options = ['Elementary Education', 'Secondary Education'];
+            options = ['Select', 'Elementary Education', 'Secondary Education'];
         }
 
         // Populate the program dropdown
         options.forEach(option => {
             const newOption = document.createElement('option');
-            newOption.value = option.toLowerCase().replace(/\s+/g, '-');
+            var newvalue;
+            if(option === 'Select'){
+                newvalue = "";
+            }
+            else{
+                newvalue = option;
+            }
+            newOption.value = newvalue.toLowerCase().replace(/\s+/g, '-');
             newOption.textContent = option;
             programSelect.appendChild(newOption);
         });
