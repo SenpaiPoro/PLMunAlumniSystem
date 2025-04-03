@@ -15,6 +15,10 @@
 
         <div class="card-body">
             <!-- Filter Form -->
+            <form class="d-flex" role="search" method="GET">
+    <input class="form-control me-2" type="search" name="search" placeholder="Search Username" aria-label="Search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
             <form method="GET" action="">
                 <label for="college">Filter by College:</label>
                 <select name="college" id="college" class="form-select" onchange="this.form.submit()">
@@ -40,13 +44,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                 <?php
-                    $users = GetData('users', $selectedCollege);
-                    if(mysqli_num_rows($users) > 0 )
-                    {
-                        while($usersList = mysqli_fetch_assoc($users))
-                        {
-                            ?>
+                <?php
+                    $searchQuery = ""; // Initialize search query
+                    if (isset($_GET['search']) && !empty($_GET['search'])) {
+                        $searchQuery = trim($_GET['search']);
+                        $users = GetCollegeData("users", $selectedCollege, $searchQuery);
+                    } else {
+                        $users = GetCollegeData("users", $selectedCollege);
+                    }
+
+                    if (mysqli_num_rows($users) > 0) {
+                        foreach ($users as $usersList) {
+                ?>
                               <tr> 
                                     <td> <?= htmlspecialchars($usersList['level']); ?></td>
                                     <td> <?= htmlspecialchars($usersList['program']); ?></td>
