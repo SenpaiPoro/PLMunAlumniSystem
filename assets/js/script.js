@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             options = ['Elementary Education', 'Secondary Education'];
         }
 
-        // Populate the program dropdown
+        // Populate  the program dropdown
         options.forEach(option => {
             const newOption = document.createElement('option');
             newOption.value = option.toLowerCase().replace(/\s+/g, '-');

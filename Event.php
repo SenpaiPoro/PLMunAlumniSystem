@@ -17,6 +17,7 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        <th>Department</th>
                         <th>Event Name</th>
                         <th>Date</th>
                         <th>Description</th>
@@ -35,6 +36,7 @@
                         {
                             ?>
                               <tr>
+                                <td> <?= $eventList['colleges']; ?></td>
                                 <td> <?= $eventList['name']; ?></td>
                                 <td> <?= $eventList['time']; ?></td>
                                 <td> <?= $eventList['description']; ?></td>
