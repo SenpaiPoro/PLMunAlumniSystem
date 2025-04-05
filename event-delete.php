@@ -14,7 +14,7 @@ if(is_numeric($parameter_result))
                 if($level === 'superadmin'){
                 redirect('Event.php', 'Successfully Deleted');
                 }else{
-                    redirect('../dean/alumnilist.php', 'Successfully Deleted');
+                    redirect('../dean/ProgramEvent.php', 'Successfully Deleted');
                 }
          }
     {

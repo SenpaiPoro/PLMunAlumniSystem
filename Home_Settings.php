@@ -16,9 +16,11 @@
         <div class="card-body">
             <!-- Filter Form -->
             <form class="d-flex" role="search" method="GET">
-    <input class="form-control me-2" type="search" name="search" placeholder="Search Username" aria-label="Search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+            <div class="input-group input-group-sm mb-3">
+                <input class="form-control" type="search" name="search" placeholder="Search Username" aria-label="Search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+            </div>
+                 <button class="btn btn-info btn-lg" type="submit">Search</button>
+            </form>
             <form method="GET" action="">
                 <label for="college">Filter by College:</label>
                 <select name="college" id="college" class="form-select" onchange="this.form.submit()">
