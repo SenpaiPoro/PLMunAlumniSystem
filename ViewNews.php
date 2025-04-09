@@ -1,5 +1,6 @@
 <?php include ('include/header.php'); ?>
 <link  href="../../users/Style/collabStyle.css" rel="stylesheet"/>
+
 <?php
                     $paramResult = checkId('id');
                     
@@ -10,7 +11,6 @@
                         $row = $result->fetch_assoc();
                        ?>
                        <div class="main-content">
-                        
             <div class="card" style="width: 90%; margin:2.5rem;">
             <div class="badge text-info text-wrap" style="width: 12rem;"><?= $row['time']; ?></div>
                 <img src="../../users/Style/events/<?= $row['photos']; ?>" class="card-img-top">
