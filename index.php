@@ -5,7 +5,7 @@
 <!-- Add these to your HTML -->
  <div class="chart-box">
  <canvas id="allUsersChart"></canvas>
-<canvas id="college_workers"></canvas>
+<canvas id="allunemployed"></canvas>
 </div>
 <div class="chart-box">
 <canvas id="collegeUsersChart"></canvas>
